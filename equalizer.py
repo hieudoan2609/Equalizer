@@ -180,6 +180,10 @@ class Equalizer(object):
                 start_market = self.start_pair.get_orderbook()
                 middle_market = self.middle_pair.get_orderbook()
                 end_market = self.end_pair.get_orderbook()
+                # ETH-LINK>LINK-DAI>DAI-ETH
+                # outer = ETH
+                # inner1 = LINK
+                # inner2 = DAI
                 max_possible_start = start_market.get_sum_after_fees(i, start_market.get_maker_trade_way(self.outer_currency), self.inner_first_currency)
                 max_possible_middle = middle_market.get_sum(i, middle_market.get_maker_trade_way(self.inner_first_currency), self.inner_first_currency)
                 balance = self.outer_currency.get_balance()
